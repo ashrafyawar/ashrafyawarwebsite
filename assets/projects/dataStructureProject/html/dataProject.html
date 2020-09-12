@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Airport Management System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="/assets/projects/dataStructureProject/css/styles.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h6 class="w3-padding-64"><b>Airport Management System<br></b>CSE222 Group10</h6>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#Prob-def" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Problem Definition</a>
+            <a href="#users" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Users Of The System</a>
+            <a href="#requirements" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Requirements</a>
+            <a href="#implementaion-details" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Implementation Details</a>
+            <a href="#diagrams" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Diagrams</a>
+            <a href="#userguide" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Guide</a>
+            <a href="#demo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Demo Video</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>CSE222 Group10</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Problem Definition -->
+        <div class="w3-container" style="margin-top:80px" id="Prob-def">
+            <h3 class="w3-jumbo"><b>Airport Management System</b><br><b></b>CSE222 Group10<b></h3>
+            <h3 class="w3-xxxlarge w3-text-red"><b>Problem Definition</b></h3>
+
+            <h5 align="justify">
+                Airport Management System is a system which provide communication between clients and Airline Companies. It organizes whole flight operations. As days go by, more and more people are using airplanes for transportation. This increase demands for more planes,
+                airports and employees, as the capacity of the current resources start to not suffice the needs. All this growth and increased complexity becomes a huge problem for the passengers, employees, managers and companies. To keep up with this
+                increase of demand, airline companies and airports need a sophisticated, easy-to-use management system. Our system is designed to meet these needs. To its users our system provides:
+
+            </h5>
+            <ul>
+                <li>Coordinating the airplanes to help them take off and land safely.</li>
+                <li>Providing resources for airline companies to manage flight related operations such as ticket sales and check-ins.</li>
+                <li>Implementing a display for available tickets, and the details of flights.</li>
+                <li>Giving flight information for the passengers who already have tickets, when requested.</li>
+                <li>Providing restaurants, banks, stores etc. to meet the needs of the passengers.</li>
+                <li>Employing managers and personnel to organize all the resources.</li>
+            </ul>
+
+        </div>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/1.png" style="width:100%" onclick="onClick(this)" alt="Welcome Page">
+            </div>
+
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/3.png" style="width:100%" onclick="onClick(this)" alt="Login Page">
+            </div>
+        </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Users Of The System -->
+        <div class="w3-container" id="users" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>Users Of The System</b></h3>
+            <h5 align="justify">
+
+                The users of this system are customers, administrators and personnels of airline companies and the airport and managers of the stores in the airport. Flight managers and check-in personnel combined for simplicity. Also customer with/ without ticket option
+                is removed.
+
+            </h5>
+            <ol>
+                <li style="color: blue;">Airport Users
+                    <ul style="color: black;">
+                        <li>Airport Administrator can add/ remove an Airport personnel, Airline Company, Shop in airport, destination, and set commission rate. Manages the administrative users.</li>
+                        <li>Airport Personnel can dismiss a customer.</li>
+                        <li>Customer can display flights, buy tickets.</li>
+                        <li>Shop Manager can open and close Shops.</li>
+                    </ul>
+                </li>
+                <br>
+                <li style="color: blue;">Airline Users
+                    <ul style="color: black;">
+                        <li>Airline Administraton can recruit/ dismiss a personnel and add/remove destination, flight and aircraft.</li>
+                        <li>Airline Personnel can login and the system.</li>
+                        <li>Airline Company manager, Airport Traffic Tower, Flight Manager and Guest are removed due to lack of necessity.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/4.png" style="width:100%" onclick="onClick(this)" alt="Airport Administration Page">
+            </div>
+
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/5.png" style="width:100%" onclick="onClick(this)" alt="Personnel Information Page">
+            </div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="w3-container" id="requirements" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>Requirements</b></h3>
+            <p align="justify">
+
+                <ol style="color: blue;">
+                    <li>User Requirements
+                        <ul style="color: black;">
+                            <li>All the users should have a menu with choices to pick from.</li>
+                            <li>The user interface should be clear to understand and easy to use.</li>
+                            <li>A graphical user interface could be implemented, to improve the convenience of the system.</li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>System Requirements
+                        <ul style="color: black;">
+                            <li>The system will have separate menus for each user type, including administrators, managers, employees and customers. The menus will have a clear, understandable user interface for the system to be user-friendly.</li>
+                            <li> The system will provide an interface for both airports and airlines, as these closely work together for the passengers to be able to fly.</li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Functional Requirements
+                        <ul style="color: black;">
+                            <li>The menus for registered users will be accessed only if the correct password is entered. Unless the correct password is entered, a warning will be shown to the user, stating that the password is incorrect.</li>
+                            <li>The users will only be able to access the operations related to themselves. In other words, no user will be able to make operations that do not belong to them. Also, no private data should be accessed other than the related
+                                user.
+                            </li>
+                            <li> Administrators will be able to add managers and employees, employees will add customers, airline companies’ manager will add airline companies and store managers will add stores to the system.</li>
+                            <li>Customers will be able to browse available tickets and see their flight information. They will be able to buy tickets and register to the system to see their flight information from the system.</li>
+                        </ul>
+                    </li>
+
+                    <br>
+                    <li>Non-Functional Requirements
+                        <ul style="color: black;">
+                            <li>Aggregation should be used efficiently across the system where new managers, employees, customers etc. are created for better code reusability.</li>
+                            <li> All possible exceptions should be handled, and an error message should be shown to the user for each exception.</li>
+                        </ul>
+
+                    </li>
+                </ol>
+                <p>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/6.png" style="width:100%" onclick="onClick(this)" alt="Airlines Administration Page">
+            </div>
+
+            <div class="w3-half">
+                <img src="/assets/projects/dataStructureProject/images/10.png" style="width:100%" onclick="onClick(this)" alt="Destinition Management Page">
+            </div>
+        </div>
+
+        <!-- Implementation Details -->
+        <div class="w3-container" id="implementaion-details" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>Implementation Details</b></h3>
+            <h3 style="color: #FFC800;" align="justify">
+                <b> Clients:</b><br>
+            </h3>
+            <h5> <b> this module, we have an Interface called UserInterface, which simply has methods to oprate every User’s information (like social security number, and a password for system). And a class called Person which implements the PersonInterface.
+                    This is the main class to be used in every administrator, personnel, manager, customer etc. Basically a person has the information of its name and surname and it is comparable.</h5>
+                </b>
+                <ul>
+                    <li><b style="color: #D35269;">ArrayList</b> data structure was used for Airport Personnel. Operations may be easier.</li>
+                    <li><b style="color: #D35269;">TreeMap</b> data structure was used for Customer. They have keys and values. Methods of this structure are more efficient than others.</li>
+                    <li> <b style="color: #D35269;">PriorityQueue</b> data structure was used for Shop Manager. Shops will be prioritized according to their fees.</li>
+                    <li><b style="color: #D35269;">Queue</b> data structure was used for Airline Personnel. To keep pilots and personnels working consecutively.</li>
+                </ul>
+
+                <br>
+                <h3 style="color: #FFC800;" align="justify">
+                    <b>Airline:</b><br>
+                </h3>
+                <h5> <b> This module keeps the data of Aircraft (used by Airline companies), Date and Time, Ticket, Destination and Flight, Airline, AirlineAdmin and AirlinePersonnel, and a storage class to construct data structures.</h5>
+                </b>
+                    <ul>
+                        <li> <b style="color: #D35269;">Airline</b> can create/ delete tickets, set comission rate.</li>
+                        <li><b style="color: #D35269;">AirlineAdmin</b> recruit/ dismiss Personnel, add/ remove destination, aircraft, flight.</li>
+                        <li><b style="color: #D35269;">AirlinePersonnel</b> has the information of personnel.</li>
+                        <li>There are three types of tickets: Economy_Class, Business_Class, First_Class.</li>
+                        <h1>Containers of this module:</h1>
+                        <li><b style="color: #D35269;">Map</b> data structure was used for Ticket. Map is ideal to use when we have an identifying value and a key value linked to it.</li>
+                        <li><b style="color: #D35269;">ArrayList</b> data structure was used for Aircraft. Since our frequent operation is get(), ArrayList is more efficient to keep our data.</li>
+                        <li><b style="color: #D35269;">MapGraph</b> data structure was used for Destination. We represent flight destinations as graph since it is practical, when calculating paths/ distance.</li>
+                    </ul>
+
+                    <br>
+                    <h3 style="color: #FFC800;" align="justify">
+                        <b>Airport:</b><br>
+                    </h3>
+                    <h5> <b> The basest type of the System. Anything will be managed from Airport class. Airport module includes information about flights, tickets, customers, personnels, airline companies, shops. Stores many lists for Customers, Airline Companies and Shops. These types have aparted Managers(ShopManager,CompanyManager). Managers can add, remove objects from their own branch lists. Airport Admin is the superior of that managers. It can manage the whole system. Shop Manager manages shop situation(open-close) and fee. Airport Admin manages shops, airline companies, destination of flights and Airport personnels. Airport personnel can dismiss customer. Customers can display flights and buy ticket or search his/her ticket by using PNR.</h5>
+                    </b>
+                        <ul>
+                            <li> <b style="color: #D35269;">TreeMap</b> data structure was used for Airline, Flights and Customer. They have keys and values. Methods of this structure are more efficient than others.</li>
+                            <li><b style="color: #D35269;">PriorityQueue</b> data structure was used for ShopManager. Shops will be prioritized according to their fees.</li>
+                            <li><b style="color: #D35269;">ArrayList</b> data structure was used for Place and AirportPersonnel. Operations may be easier.</li>
+
+                        </ul>
+                        <br>
+                        <h3 style="color: #FFC800;" align="justify">
+                            <b> List Of All Implemented Data Structures In This Project:</b><br>
+                        </h3>
+                        </b>
+                        <ul>
+                            <li> <b style="color: #D35269;">Abstract Graph</b></li>
+                            <li> <b style="color: #D35269;">Breadth First Search</b></li>
+                            <li> <b style="color: #D35269;">Depth First Search</b></li>
+                            <li> <b style="color: #D35269;">Edge</b></li>
+                            <li> <b style="color: #D35269;">Graph</b></li>
+                            <li> <b style="color: #D35269;">List Graph</b></li>
+                            <li> <b style="color: #D35269;">Map Graph</b></li>
+                            <li> <b style="color: #D35269;">Skip List</b></li>
+                        </ul>
+                        <br>
+        </div>
+        <!-- Diagrams -->
+        <div class="w3-container" id="diagrams" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>Diagrams</b></h3>
+            <h3 style="color: #FFC800;" align="justify">
+                <b> Use Case Diagrams:</b><br>
+            </h3>
+
+            <div class="w3-row-padding">
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/usecase1.png" style="width:100%" onclick="onClick(this)" alt="Customer UseCase">
+                </div>
+
+                <div style="border-style: ridge" class=" w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/usecase2.png" style="width:100%" onclick="onClick(this)" alt="Employee Login UseCase">
+                </div>
+            </div>
+            <br>
+            <h3 style="color: #FFC800;" align="justify">
+                <b> Module Diagrams:</b><br>
+            </h3>
+
+            <div class="w3-row-padding">
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/module2.png" style="width:100%" onclick="onClick(this)" alt="Airport Module">
+                </div>
+
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/module3.png" style="width:100%" onclick="onClick(this)" alt="Customer Moduel">
+                </div>
+            </div>
+            <br>
+            <h3 style="color: #FFC800;" align="justify">
+                <b>Class Diagrams:</b><br>
+            </h3>
+
+            <div class="w3-row-padding">
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/class1.png" style="width:100%" onclick="onClick(this)" alt="Class diagram1">
+                </div>
+
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/class2.png" style="width:100%" onclick="onClick(this)" alt="Class Diagram2">
+                </div>
+            </div>
+            <br>
+            <h3 style="color: #FFC800;" align="justify">
+                <b>Sequence Diagram:</b><br>
+            </h3>
+
+            <div class="w3-row-padding">
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/seq1.png" style="width:100%" onclick="onClick(this)" alt="Customer Sequence Diagram">
+                </div>
+
+                <div style="border-style: ridge" class="w3-half">
+                    <img src="/assets/projects/dataStructureProject/diagrams/seq2.png" style="width:100%" onclick="onClick(this)" alt="Airport Sequence Diagram">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w3-container" id="userguide" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>User Guide</b></h3>
+
+            <div class="content">
+                <div class="embed-container">
+                    <iframe src="/assets/projects/dataStructureProject/userguide.pdf#view=fitH" frameborder="0" width="100%" height="500px"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w3-container" id="demo" style="margin-top:75px">
+            <h3 class="w3-xxxlarge w3-text-red"><b>Demo Video</b></h3>
+
+            <div class="video-responsive">
+                <iframe width="420" height="320" src="https://www.youtube.com/embed/scWSrEatLXc" autoplay=1; allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+
+        <!-- contact section -->
+        <section style="padding-top: 5rem;" id="contact" class="contact-section">
+            <div class="contact-section-header">
+                <h2>Let's work together...</h2>
+                <p>How do you take your coffee?</p>
+            </div>
+            <div class="contact-links">
+                <a href="https://www.facebook.com/muhammadashraf.yawar/" target="_blank" class="btn contact-details"><i class="fab fa-facebook-square"></i> Facebook</a>
+                <a id="profile-link" href="https://github.com/ashrafyawar" target="_blank" class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://twitter.com/AshrafYawar1" target="_blank" class="btn contact-details"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="mailto: m.ashraf0016@gmail.com" class="btn contact-details"><i class="fas fa-at"></i> Send a mail</a>
+            </div>
+        </section>
+        <!-- End page content -->
+    </div>
+    <br>
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:55px;padding-right:65px">
+        <p class="w3-right">Developed By CSE222 Group10</p>
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+</body>
+
+</html>
