@@ -813,13 +813,13 @@
             galleryImage.fadeOut(function() {
                 // Inside the callback, "this" refers to the galleryImage
                 $(this).attr("src", images[i]);
-                $(this).fadeIn(2000);
+                $(this).fadeIn();
             });
         
             // Log current image path for debugging
             console.log(galleryImage.attr("src"));
         
-            }, 4000);
+            }, 5000);
         
         });
     </script>
