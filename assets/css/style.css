@@ -630,19 +630,14 @@ a.icon-up-bg:hover {
   text-align: center;
 }
 
-.gallery {
-  height: 610px;
-  width: 1000px;
-  position: relative;
-  margin-left: 15%;
+#gallery {
   border-radius: 30%;
 }
 
-.gallery img {
-  position: absolute;
-  height: 600px;
-  width: 1000px;
+#gallery img {
   border: 4px solid #000000;
   border-radius: 2em 1em 4em / 0.5em 3em;
   border-style: outset;
+  width: 70rem;
+  height: 45rem;
 }
