@@ -1,1 +1,8 @@
-### This Repository is my portfolio live on https://ashrafyawar.github.io/ashrafyawarwebsite/
+### Explore My Projects On My:
+  - YOUTUBE: https://www.youtube.com/channel/UCpk-yq776grQMm_f8TzNjaw/videos
+  - LINKEDIN: https://www.linkedin.com/in/ashrafyawar/
+  - PORTFOLIO: https://ashrafyawar.github.io/ashrafyawarwebsite/
+
+###Requirements:
+- Broswer
+- Some code editor (not mandatory), i prefer  VSCode
